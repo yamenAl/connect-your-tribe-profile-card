@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,47 +5,136 @@
 }
 
 body {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  font-family: Helvetica, Arial, sans-serif;
-  background: silver;
-  color: #050542;
-}
-
-header {
-  padding: 0.5rem;
-  background: #A675F5;
-  color: white;
-
-  h1 {
-    text-transform: uppercase;
-  }
-}
-
-article {
+  background-color: #f4f4f4;
+  height: 100vh;
   display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  width: 20rem;
-  aspect-ratio: 1/1;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  background: white;
-  text-align: center;
-  transform-origin: center;
-  transform: rotate(2deg);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  > p {
-    font-size: 2rem;
-    font-family: 'Permanent Marker', cursive;
-    transform-origin: center;
-    transform: rotate(-6deg);
-    word-break: break-all;
-  }
+  justify-content: center;
+  align-items: center;
 }
 
-footer {
-  height: 1rem;
-  background: #A675F5;
+.container {
+  background: linear-gradient(135deg, #6a5acd, #00ff7f); /* Purple to light green gradient */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+}
+
+.profile-card {
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.profile-card img {
+  border-radius: 50%;
+  border: 5px solid #6a5acd; /* Purple border */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.top-right-corner {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: linear-gradient(135deg, #00ff7f, #6a5acd); /* Light green to purple gradient */
+  padding: 10px 15px;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  max-width: calc(100% - 150px); /* Dynamic size relative to the container */
+  z-index: 1; /* Ensure it stays on top */
+}
+
+.profile-content {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.experience-box, .description-box {
+  background: linear-gradient(135deg, #6a5acd, #e0e0e0); /* Purple to light grey gradient */
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #00ff7f; /* Light green border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.description-box {
+  margin-left: 50px;
+}
+
+.card__social {
+  width: 100%;
+  background-color: #6a5acd; /* Purple background */
+  padding: 1rem;
+  border-radius: 0 0 15px 15px; /* Rounded corners only at the bottom */
+  box-shadow: 0 8px 24px hsla(300, 75%, 56%, 0.3); /* Purple shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateY(-15px); /* Pull it slightly upward to visually attach it */
+}
+
+.card__social-list {
+  list-style-type: none; /* Remove bullet points */
+  display: none; /* Initially hidden */
+  flex-direction: row; /* Make the icons appear next to each other */
+  align-items: center;
+  gap: 3rem; /* Add space between the icons */
+}
+
+.card__social.animation .card__social-list {
+  display: flex; /* Show the social links when toggled */
+}
+
+.card__social-toggle {
+  background-color: #000;
+  color: #00ff7f; /* Light green toggle button */
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+  width: 30px; /* Adjust icon size */
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Scale icon on hover */
+}
+
+/* Media query for smaller screens to prevent overlap */
+@media (max-width: 768px) {
+  .top-right-corner {
+    max-width: calc(100% - 150px); /* Ensure it resizes responsively */
+    right: 10px;
+    top: 10px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .profile-card {
+    padding: 15px;
+    gap: 15px; /* Reduce gap for smaller screens */
+  }
 }
