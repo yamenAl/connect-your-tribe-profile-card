@@ -6,22 +6,22 @@
 
 body {
   background-color: #f4f4f4;
-  height: 100vh;
-  display: flex;
+  min-height: 100vh;
+  display: grid;
   justify-content: center;
   align-items: center;
 }
 
 .container {
+  display: flex;
+  flex-flow: column;
   background: linear-gradient(135deg, #6a5acd, #00ff7f); /* Purple to light green gradient */
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 20px;
-  max-width: 800px;
 }
 
 .profile-card {

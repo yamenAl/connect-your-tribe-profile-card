@@ -1,14 +1,46 @@
 {% render 'partials/head.liquid' %}
 
-<article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
+<article class="container">
+  <header class="profile-card">
+    <img width="80" height="80"  src="{{ person.avatar }}">
+    <h1>{{ person.bio }}</h1>
+    <p>{{ person.name }}</p>
   </header>
-
-  <p>{{ person.name }}</p>
-
-  <footer></footer>
+  <p>{{ person|json }}</p>
+  <section class="profile-content">
+    <section class="experience-box">
+      <dl>
+        <dt>HTML</dt>
+        <dd>🏆🏆🏆</dd>
+        <dt>CSS</dt>
+        <dd>🏆🏆🏆</dd>
+        <dt>JavaScript</dt>
+        <dd>🏆🏆</dd>
+      </dl>
+    </section>
+    <section class="description-box">
+      <p>{{ person.custom }}</p>
+    </section>
+  </section>
+   
+  <footer>
+   <section class="card__social" id="card-social">
+      <div class="card__social-toggle">
+        <i class="ri-add-line"></i>
+      </div>
+      <span class="card__social-text">My social networks</span>
+      <ul class="card__social-list">
+        <li><a href="https://www.facebook.com" target="_blank"><img src="assets/icons/facebook.png" alt="Facebook" class="social-icon"></a></li>
+        <li><a href="https://www.twitter.com" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter" class="social-icon"></a></li>
+        <li><a href="https://www.instagram.com" target="_blank"><img src="assets/icons/instagram.png" alt="Instagram" class="social-icon"></a></li>
+        <li><a href="https://www.linkedin.com" target="_blank"><img src="assets/icons/linkedin.png" alt="LinkedIn" class="social-icon"></a></li>
+      </ul>
+    </section>
+  </footer>
 </article>
 
 {% render 'partials/foot.liquid' %}
+
+
+  
+
