@@ -1,0 +1,25 @@
+{% render 'partials/head.liquid' %}
+
+<h1>Data-Driven Web</h1>
+<p>Ik ben dus {{ person.name }}</p>
+
+<p>Ik ben dus {{ person.custom.name }}</p>
+<img src="{{ person.custom.blok1 }}">
+<p>I did born on {{ person.birthdate | date: "%d-%m-%Y" }}</p>
+
+<p>Het is vandaag {{ 'now' | date: "%Y-%m-%d %H:%M:%S"  }}</p>
+
+
+{% for block in person.custom.blocks %}
+<img hight=250 width=250 src="{{ block.img}}">
+
+{% endfor %}
+
+
+<details><summary>Data</summary><pre>{{ person | json:4 }}</pre></details>
+
+{% render 'partials/foot.liquid' %}
+
+
+  
+
