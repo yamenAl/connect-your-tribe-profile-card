@@ -5,135 +5,153 @@
 }
 
 body {
-  background-color: #f4f4f4;
+  background: #f4f4f4;
   min-height: 100vh;
   display: grid;
-  justify-content: center;
-  align-items: center;
+  place-items: center;
+  color: #6a5acd;
+  font-family: "pixel", Arial, sans-serif;
+}
+h2{
+  font-size: 0.8em;
 }
 
-.container {
+header, footer {
+  background: #748BFF;
+  color: white;
+  padding: 0.5rem;
+  width: 90%;
+  display: block;
+  margin: 1em auto; 
+  text-align: center; 
+  gap:0.5em;
+}
+header{
+  border-radius: 5vh 5vh 0 0;
+}
+footer{
+  border-radius: 0 0 5vh 5vh;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+article {
   display: flex;
-  flex-flow: column;
-  background: linear-gradient(135deg, #6a5acd, #00ff7f); /* Purple to light green gradient */
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-  position: relative;
-  gap: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30rem;
+  border-radius: 5vh;
+  overflow: hidden;
+  background: white;
+  text-align: center;
+  transform-origin: center;
+  border: 2px solid #000000;
+
+  > p {
+  font-size: 2rem;
+  font-family: 'Permanent Marker', cursive;
+  transform: rotate(-6deg);
+
+  }
 }
 
 .profile-card {
-  padding: 20px;
-  border-radius: 15px;
   display: flex;
   align-items: center;
-  gap: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   position: relative;
 }
 
 .profile-card img {
   border-radius: 50%;
-  border: 5px solid #6a5acd; /* Purple border */
+  border: 5px solid #6a5acd;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-}
-
-.top-right-corner {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: linear-gradient(135deg, #00ff7f, #6a5acd); /* Light green to purple gradient */
-  padding: 10px 15px;
-  border-radius: 12px;
-  color: #fff;
-  text-align: center;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  max-width: calc(100% - 150px); /* Dynamic size relative to the container */
-  z-index: 1; /* Ensure it stays on top */
 }
 
 .profile-content {
   padding: 20px;
   display: flex;
-  gap: 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%;
 }
 
 .experience-box, .description-box {
-  background: linear-gradient(135deg, #6a5acd, #e0e0e0); /* Purple to light grey gradient */
-  padding: 15px;
+  background: #748BFF;
   border-radius: 12px;
-  border: 2px solid #00ff7f; /* Light green border */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.description-box {
-  margin-left: 50px;
-}
-
-.card__social {
-  width: 100%;
-  background-color: #6a5acd; /* Purple background */
-  padding: 1rem;
-  border-radius: 0 0 15px 15px; /* Rounded corners only at the bottom */
-  box-shadow: 0 8px 24px hsla(300, 75%, 56%, 0.3); /* Purple shadow */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 10em;
+  height: 10em;
+  position: relative;
+  overflow: hidden;
+}
+.experience-box{
+  width: 10em;
+}
+.description-box{
+  width: 15em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center;
+  p{
+    color: white;
+    margin-top: auto;
+    font-size: 0.5em;
+  }
+
+}
+
+.experience-box img{
   position: absolute;
-  top: 100%;
-  left: 0;
-  transform: translateY(-15px); /* Pull it slightly upward to visually attach it */
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.experience-box img.active, 
+.description-box img.active {
+  opacity: 1;
+}
+.card__social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card__social-text {
+  font-weight: bold;
 }
 
 .card__social-list {
-  list-style-type: none; /* Remove bullet points */
-  display: none; /* Initially hidden */
-  flex-direction: row; /* Make the icons appear next to each other */
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.card__social-list li {
+  display: flex; 
+}
+
+.card__social-list a {
+  display: flex;
   align-items: center;
-  gap: 3rem; /* Add space between the icons */
-}
-
-.card__social.animation .card__social-list {
-  display: flex; /* Show the social links when toggled */
-}
-
-.card__social-toggle {
-  background-color: #000;
-  color: #00ff7f; /* Light green toggle button */
-  padding: 0.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-  display: inline-flex;
   justify-content: center;
-  align-items: center;
+  text-decoration: none;
 }
 
 .social-icon {
-  width: 30px; /* Adjust icon size */
-  height: 30px;
-  transition: transform 0.3s ease;
+  width: 30px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
 }
 
 .social-icon:hover {
-  transform: scale(1.2); /* Scale icon on hover */
-}
-
-/* Media query for smaller screens to prevent overlap */
-@media (max-width: 768px) {
-  .top-right-corner {
-    max-width: calc(100% - 150px); /* Ensure it resizes responsively */
-    right: 10px;
-    top: 10px;
-    padding: 8px 12px;
-    font-size: 0.9rem;
-  }
-
-  .profile-card {
-    padding: 15px;
-    gap: 15px; /* Reduce gap for smaller screens */
-  }
+  transform: scale(1.1); 
 }

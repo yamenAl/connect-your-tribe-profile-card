@@ -15,11 +15,22 @@
 
 {% endfor %}
 
+<!-- Slideshow Container -->
+<div class="slideshow-container" onclick="showNextSlide()">
+  {% for block in person.custom.blocks %}
+    <img class="slideshow-image {% if forloop.first %}active{% endif %}" height="30" src="{{ block.img }}">
+  {% endfor %}
+</div>
 
 <details><summary>Data</summary><pre>{{ person | json:4 }}</pre></details>
 
 {% render 'partials/foot.liquid' %}
 
 
-  
+
+
+
+
+
+
 
