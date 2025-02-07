@@ -17,4 +17,4 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-console.log("{{ person|json }}");
+console.log("hello world");

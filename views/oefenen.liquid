@@ -18,7 +18,7 @@
 <!-- Slideshow Container -->
 <div class="slideshow-container" onclick="showNextSlide()">
   {% for block in person.custom.blocks %}
-    <img class="slideshow-image {% if forloop.first %}active{% endif %}" height="30" src="{{ block.img }}">
+    <img class="slideshow-image {% if forloop.first %}active{% endif %}" height="250" width="250" src="{{ block.img }}">
   {% endfor %}
 </div>
 
