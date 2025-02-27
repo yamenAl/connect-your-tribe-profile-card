@@ -26,9 +26,11 @@ header, footer {
   text-align: center; 
   gap:0.5em;
 }
+
 header{
   border-radius: 5vh 5vh 0 0;
 }
+
 footer{
   border-radius: 0 0 5vh 5vh;
 }
@@ -89,9 +91,11 @@ article {
   position: relative;
   overflow: hidden;
 }
+
 .experience-box{
   width: 10em;
 }
+
 .description-box{
   width: 15em;
   padding: 1em;
@@ -120,6 +124,7 @@ article {
 .description-box img.active {
   opacity: 1;
 }
+
 .card__social {
   display: flex;
   align-items: center;
